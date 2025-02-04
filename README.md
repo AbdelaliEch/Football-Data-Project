@@ -7,8 +7,3 @@
 5) Setup GCP credentials in Kestra using "gcp_kv" flow
 6) Extract dataset from Kaggle and upload it to GCS bucket using "kaggle_download_gcs_upload" flow
 
-
-Now let's start the pipeline
-First we need to use a kestra workflow that will extract the data from Kaggle and upload it GCS bucket
-I already have the download task done, we still need the upload task
-
