@@ -1,0 +1,11 @@
+id: kaggle
+namespace: project
+tasks:
+  - id: download
+    type: io.kestra.plugin.core.http.Download
+    uri: https://www.kaggle.com/api/v1/datasets/download/davidcariboo/player-scores
+
+  - id: unzip
+    type: io.kestra.plugin.compress.ArchiveDecompress
+    from: "{{ outputs.download.uri }}"
+    algorithm: ZIP
