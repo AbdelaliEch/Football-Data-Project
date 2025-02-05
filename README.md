@@ -16,12 +16,12 @@ Remark: I needed the file "spark_gcs_bigquery" in my bucket, gsutil cp command d
 had all the necessary permissions.
 So I uploaded the file manually by downloading it from vscode to my local computer then using GCP GUI to upload it
 Then I ran this command:
-"""bash
+```bash
 gcloud dataproc jobs submit pyspark \
     --cluster=project-cluster-2c88 \
     --region=europe-west2 \
     --jars=gs://spark-lib/bigquery/spark-3.4-bigquery-0.37.0.jar \
     gs://de-zoomcamp-project-449906_bucket/code/spark_gcs_bigquery.py
-"""
+```
 
 Now we have the data as csv and parquet files in GCS and as tables in BigQuery
