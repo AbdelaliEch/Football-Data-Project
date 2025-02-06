@@ -1,10 +1,10 @@
 # Final-Project
 
-1) Created a GCP account and started a new project: "de-zoomcamp-project" 
-2) I followed the instructions in this video: https://youtu.be/ae-CV2KfoN0?si=jq2KO6LgsO2F_D_v to create a VM "project-vm" and set it up. 
-3) Created a gcs bucket "de-zoomcamp-project-449906_bucket" and bigquery dataset "de_zoomcamp_project_dataset" using Terraform 
+1) Created a GCP account and started a new project
+2) I followed the instructions in this video: https://youtu.be/ae-CV2KfoN0?si=jq2KO6LgsO2F_D_v to create a VM and set it up. 
+3) Created a gcs bucket and bigquery dataset using Terraform 
 4) Kestra setup with docker using Docker-compose
-5) Setup GCP credentials in Kestra using "gcp_kv" flow
+5) Setup GCP credentials in Kestra using "kestra_flows/gcp_kv" flow
 6) Extract dataset from Kaggle and upload it to GCS bucket using "kaggle_download_gcs_upload" flow
 7) Installed Spark locally on the VM using this video: https://youtu.be/hqUbB9c8sKg?si=coujzlSGM3fRzqKz
 But I didn't use the same version in the video, I installed spark 3.4.4
