@@ -24,7 +24,7 @@ gcloud dataproc jobs submit pyspark \
     gs://de-zoomcamp-project-449906_bucket/code/spark_gcs_bigquery.py
 ```
 9) Setup dbt project on dbt cloud 
-I followed these instructions :
+I followed these instructions:    
 https://github.com/ManuelGuerra1987/data-engineering-zoomcamp-notes/tree/main/4_Analytics-Engineering  
 https://github.com/DataTalksClub/data-engineering-zoomcamp/blob/main/04-analytics-engineering/dbt_cloud_setup.md  
 when setuping the bigquery connection, after uploading key json file, click ctrl+f > type 'location' > location >
