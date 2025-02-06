@@ -5,14 +5,14 @@
 3) Created a gcs bucket and bigquery dataset using Terraform 
 4) Kestra setup with docker using Docker-compose
 5) Setup GCP credentials in Kestra using "kestra_flows/gcp_kv" flow
-6) Extract dataset from Kaggle and upload it to GCS bucket using "kaggle_download_gcs_upload" flow
+6) Extract dataset from Kaggle and upload it to GCS bucket using "kestra_flows/kaggle_download_gcs_upload" flow
 7) Installed Spark locally on the VM using this video: https://youtu.be/hqUbB9c8sKg?si=coujzlSGM3fRzqKz
 But I didn't use the same version in the video, I installed spark 3.4.4
-Then I linked spark with GCS in the "spark_gcs" notebook using this video: https://youtu.be/Yyz293hBVcQ?si=ei5qu9n9NXTVTf2n 
+Then I linked spark with GCS in the "notebooks/spark_gcs" notebook using this video: https://youtu.be/Yyz293hBVcQ?si=ei5qu9n9NXTVTf2n 
 And did some testing on the files to know the fields, sizes, schema...
-8) Converted the testing "spark_gcs" notebook into python file "spark_gcs_bigquery" and added to it, 
+8) Converted the testing "notebooks/spark_gcs" notebook into python file "notebooks/spark_gcs_bigquery" and modified it, 
 so that we can use it with dataproc
-Remark: I needed the file "spark_gcs_bigquery" in my bucket, gsutil cp command didn't work for me even tough my VM service account
+Remark: I needed the file "notebooks/spark_gcs_bigquery" in my bucket, gsutil cp command didn't work for me even tough my VM service account
 had all the necessary permissions.
 So I uploaded the file manually by downloading it from vscode to my local computer then using GCP GUI to upload it
 Then I ran this command:
