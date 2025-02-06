@@ -1,0 +1,56 @@
+
+version: 2
+
+sources:
+  - name: staging
+    database: de-zoomcamp-project-449906
+    schema: de_zoomcamp_project_dataset
+    tables:
+      - name: appearances
+      - name: club_games
+      - name: clubs
+      - name: competitions
+      - name: game_events
+      - name: game_lineups
+      - name: games
+      - name: player_valuations
+      - name: players
+      - name: transfers
+
+
+models:
+    - name: stg_appearances
+      columns:
+          - name: appearance_id
+            tests:
+                - unique
+                - not_null
+
+    - name: stg_clubs
+      columns:
+          - name: club_id
+            description: "The primary key for this table"
+            tests:
+                - unique
+                - not_null
+    
+    - name: stg_competitions
+      columns:
+          - name: competition_id
+            tests:
+                - unique
+                - not_null
+    
+    - name: stg_games
+      columns:
+          - name: game_id
+            tests:
+                - unique
+                - not_null
+    
+    - name: stg_players
+      columns:
+          - name: player_id
+            tests:
+                - unique
+                - not_null
