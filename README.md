@@ -16,7 +16,7 @@ Remark: I needed the file "spark_gcs_bigquery" in my bucket, gsutil cp command d
 had all the necessary permissions.
 So I uploaded the file manually by downloading it from vscode to my local computer then using GCP GUI to upload it
 Then I ran this command:
-"""bash
+```bash
 gcloud dataproc jobs submit pyspark \
     --cluster=project-cluster-2c88 \
     --region=europe-west2 \
