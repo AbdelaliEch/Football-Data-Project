@@ -37,4 +37,7 @@ clean-targets:         # directories to be removed by `dbt clean`
 
 models:
   zoomcamp_dbt_project:
-
+      staging:
+        materialized: view
+      intermediate:
+        materialized: table
