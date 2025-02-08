@@ -1,7 +1,7 @@
 with cte2 as (
     select
         player_id,
-        extract(year from date) as year,
+        extract(year from date) as season,
         club_id,  
         game_id,
         type
@@ -18,7 +18,7 @@ cte3 as (
 )
 select
     player_id,
-    year,
+    season,
     count(case when 
         type='substitutes' then 1 end) / count(1) as substituting_percentage,
     count(case when 
@@ -36,6 +36,6 @@ on
 and 
     cte2.game_id = cte3.game_id 
 group by
-    player_id, year
+    player_id, season
 order by 
-    player_id, year
+    player_id, season

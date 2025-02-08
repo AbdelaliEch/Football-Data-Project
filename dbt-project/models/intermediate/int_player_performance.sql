@@ -2,7 +2,7 @@ with cte1 as (
     select 
         player_id,
         player_name,
-        extract(year from date) as year,
+        extract(year from date) as season,
         count(1) as games_played,
         sum(yellow_cards) as total_yellow_cards,
         sum(red_cards) as total_red_cards,
@@ -14,8 +14,8 @@ with cte1 as (
     from 
         {{ ref('stg_appearances') }}
     group by 
-        player_id, player_name, year
+        player_id, player_name, season
     order by 
-        player_id, player_name, year
+        player_id, player_name, season
 )
 select * from cte1
