@@ -63,7 +63,7 @@ The data pipeline follows a structured ELT (Extract, Load, Transform) process:
 - Provisioned **Google Cloud Storage (GCS) bucket** and **BigQuery dataset** using Terraform.
   - Terraform script is available in the repository under the `/terraform` directory.
 
-### 3. Kestra Setup and Data Extraction Workflow
+### 3. Kestra Setup: Data Extraction and Loading Workflow
 - Installed **Kestra** using Docker Compose.
   - The docker-compose file used is in `docker-compose.yaml` file located in the root directory.
 - Configured **GCP credentials** using Kestra to store the necessary GCP credentials to enable Kestra to interact with Google Cloud services
@@ -80,7 +80,7 @@ The data pipeline follows a structured ELT (Extract, Load, Transform) process:
 
 ### 5. Processing Data with Dataproc
 - **Set up Dataproc cluster**: Followed this [video](https://youtu.be/osAiAYahvh8?si=QDfmIj-xN3DZD7Yd) to set up the Dataproc cluster on Google Cloud Platform.
-- Converted the Jupyter notebook to a Python script
+- Converted the previous Jupyter notebook to a Python script
   - The python script is in `notebooks/spark_gcs_bigquery.py`.
 - Uploaded the script to GCS and ran the **Dataproc job** using the command:
   ```bash
