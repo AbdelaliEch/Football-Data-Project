@@ -12,10 +12,6 @@ Quick Links: [Looker Studio Data Visualization](https://lookerstudio.google.com/
 - [Tools and Technologies Used](#tools-and-technologies-used)
 - [Step-by-Step Implementation](#step-by-step-implementation)
 - [Reproducibility](#reproducibility)
-- [Dashboard and Visualization](#dashboard-and-visualization)
-- [Future Enhancements](#future-enhancements)
-- [Contributors](#contributors)
-- [License](#license)
 - [Acknowledgments](#acknowledgments)
 
 ---
