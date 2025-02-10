@@ -32,7 +32,7 @@ The dataset consists of the following files:
 - `game_lineups.csv`
 - `player_valuations.csv`
 - `transfers.csv`
-- `competitions.csv`
+- `competitions.csv`  
 You can access the dataset on Kaggle [here](https://www.kaggle.com/datasets/davidcariboo/player-scores).
 
 ## Data Pipeline
