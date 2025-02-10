@@ -54,4 +54,3 @@ The data pipeline follows a structured process:
 - **Apache Spark**: Distributed computing for data processing
 - **dbt Cloud**: Data modeling and transformation
 - **Looker Studio**: Data visualization for interactive dashboards
-- **Kaggle API**: Data extraction from Kaggle
