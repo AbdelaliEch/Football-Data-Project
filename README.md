@@ -1,8 +1,8 @@
 # Football Data Engineering Project
 
-Quick Links: [Looker Studio Data Visualization](https://lookerstudio.google.com/reporting/70c08dd6-9771-41d6-a549-ab60b1409b00) | [Grading guide](https://github.com/AbdelaliEch/final_project/blob/main/grading_guide.md)
+Quick Links: [Looker Studio Data Visualization](https://lookerstudio.google.com/reporting/70c08dd6-9771-41d6-a549-ab60b1409b00) | [Grading guide](https://github.com/AbdelaliEch/Football-Data-Engineering-Project/blob/main/grading_guide.md)
 
-![Players Dashboard](https://github.com/AbdelaliEch/final_project/blob/main/images/Players%20Dashboard.jpg)
+![Players Dashboard](https://github.com/AbdelaliEch/Football-Data-Engineering-Project/blob/main/images/Players%20Dashboard.jpg)
 
 ## Table of Contents
 - [Introduction](#introduction)
@@ -55,7 +55,7 @@ You can access the dataset on Kaggle [here](https://www.kaggle.com/datasets/davi
 - **Looker Studio**: Data visualization for interactive dashboards
 
 ## Data Pipeline
-![Pipeline Diagram](https://github.com/AbdelaliEch/final_project/blob/main/images/Pipeline%20diagram.png)
+![Pipeline Diagram](https://github.com/AbdelaliEch/Football-Data-Engineering-Project/blob/main/images/Pipeline%20diagram.png)
 The data pipeline follows a structured ELT (Extract, Load, Transform) process:
 1. **Extract**: Download raw csv football data from Kaggle and store it in Google Cloud Storage (GCS).
 2. **Load and Process**:  
@@ -73,22 +73,22 @@ The data pipeline follows a structured ELT (Extract, Load, Transform) process:
 - Followed [this video](https://youtu.be/ae-CV2KfoN0?si=jq2KO6LgsO2F_D_v) for setting up a **Virtual Machine (VM)**.
 
 ### 2. Infrastructure Setup with Terraform
-- Provisioned **Google Cloud Storage (GCS) bucket** and **BigQuery dataset** using [Terraform script](https://github.com/AbdelaliEch/final_project/blob/main/terraform/main.tf).
+- Provisioned **Google Cloud Storage (GCS) bucket** and **BigQuery dataset** using [Terraform script](https://github.com/AbdelaliEch/Football-Data-Engineering-Project/blob/main/terraform/main.tf).
 
 ### 3. Kestra Setup: Data Extraction and Loading Workflow
-- Installed **Kestra** using Docker compose [yaml file](https://github.com/AbdelaliEch/final_project/blob/main/docker-compose.yml).
-- Configured **GCP credentials** using [Kestra flow](https://github.com/AbdelaliEch/final_project/blob/main/kestra_flows/gcp_kv.yaml) to store the necessary GCP credentials allowing Kestra to interact with Google Cloud services
-- Implemented a **Kaggle data extraction and upload to GCS** [flow](https://github.com/AbdelaliEch/final_project/blob/main/kestra_flows/kaggle_download_gcs_upload.yaml)
+- Installed **Kestra** using Docker compose [yaml file](https://github.com/AbdelaliEch/Football-Data-Engineering-Project/blob/main/docker-compose.yml).
+- Configured **GCP credentials** using [Kestra flow](https://github.com/AbdelaliEch/Football-Data-Engineering-Project/blob/main/kestra_flows/gcp_kv.yaml) to store the necessary GCP credentials allowing Kestra to interact with Google Cloud services
+- Implemented a **Kaggle data extraction and upload to GCS** [flow](https://github.com/AbdelaliEch/Football-Data-Engineering-Project/blob/main/kestra_flows/kaggle_download_gcs_upload.yaml)
 
 ### 4. Apache Spark Setup
 - Installed **Apache Spark (version 3.4.4)** locally (for testing the data) on the VM.
   - Refer to the [installation guide](https://youtu.be/hqUbB9c8sKg?si=coujzlSGM3fRzqKz).
-- Created a [Jupyter notebook](https://github.com/AbdelaliEch/final_project/blob/main/notebooks/spark_gcs.ipynb) and linked **Spark** with **Google Cloud Storage** to analyze the files columns and schema using Spark Dataframes.
+- Created a [Jupyter notebook](https://github.com/AbdelaliEch/Football-Data-Engineering-Project/blob/main/notebooks/spark_gcs.ipynb) and linked **Spark** with **Google Cloud Storage** to analyze the files columns and schema using Spark Dataframes.
   - [Tutorial on connecting Spark with GCS](https://youtu.be/Yyz293hBVcQ?si=ei5qu9n9NXTVTf2n).
 
 ### 5. Processing Data with Dataproc
 - **Set up Dataproc cluster**: Followed this [video](https://youtu.be/osAiAYahvh8?si=QDfmIj-xN3DZD7Yd) to set up the Dataproc cluster on Google Cloud Platform.
-- Converted the previous Jupyter notebook to a [Python script](https://github.com/AbdelaliEch/final_project/blob/main/notebooks/spark_gcs_bigquery.py) and modified it to make it convert the CSV data to Parquets and then reload the processed parquets data back to both GCS and BigQuery.
+- Converted the previous Jupyter notebook to a [Python script](https://github.com/AbdelaliEch/Football-Data-Engineering-Project/blob/main/notebooks/spark_gcs_bigquery.py) and modified it to make it convert the CSV data to Parquets and then reload the processed parquets data back to both GCS and BigQuery.
 - Uploaded the script to GCS and ran the **Dataproc job** using the command:
   ```bash
   gcloud dataproc jobs submit pyspark \
@@ -103,7 +103,7 @@ The data pipeline follows a structured ELT (Extract, Load, Transform) process:
   - [Manuel Guerra's Notes](https://github.com/ManuelGuerra1987/data-engineering-zoomcamp-notes/tree/main/4_Analytics-Engineering)
   - [DataTalksClub's dbt setup](https://github.com/DataTalksClub/data-engineering-zoomcamp/blob/main/04-analytics-engineering/dbt_cloud_setup.md)
 - Configured **BigQuery connection** in dbt Cloud.
-- Built [staging, intermediate, and mart models](https://github.com/AbdelaliEch/final_project/tree/main/dbt-project/models) in dbt to prepare the data for analysis and visualization along with tests and documentation to ensure data quality and pipeline reliability.
+- Built [staging, intermediate, and mart models](https://github.com/AbdelaliEch/Football-Data-Engineering-Project/tree/main/dbt-project/models) in dbt to prepare the data for analysis and visualization along with tests and documentation to ensure data quality and pipeline reliability.
   - The full dbt project is available in the repository under the `/dbt-project` directory
 
  
