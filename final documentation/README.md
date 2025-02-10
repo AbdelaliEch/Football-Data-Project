@@ -37,3 +37,21 @@ The dataset consists of the following files:
 - `player_valuations.csv`
 - `transfers.csv`
 - `competitions.csv`
+
+## Data Pipeline
+The data pipeline follows a structured process:
+1. **Extract**: Download the dataset from Kaggle and store it in Google Cloud Storage (GCS).
+2. **Load**: Provision GCS bucket and BigQuery dataset using Terraform.
+3. **Transform**: Process data using Apache Spark and load the results into BigQuery.
+4. **Model**: Utilize dbt to create staging, intermediate, and final models.
+5. **Visualize**: Create dashboards and insights in Looker Studio.
+
+## Tools and Technologies Used
+- **Google Cloud Platform (GCP)**: Includes Compute Engine, Cloud Storage, BigQuery, Dataproc
+- **Terraform**: Infrastructure as code for provisioning GCP resources
+- **Kestra**: Workflow orchestration tool for managing the ELT pipeline
+- **Docker & Docker Compose**: Containerization for environment setup
+- **Apache Spark**: Distributed computing for data processing
+- **dbt Cloud**: Data modeling and transformation
+- **Looker Studio**: Data visualization for interactive dashboards
+- **Kaggle API**: Data extraction from Kaggle
