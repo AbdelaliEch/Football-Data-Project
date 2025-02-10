@@ -21,3 +21,6 @@ Quick Links: [Looker Studio Data Visualization](https://lookerstudio.google.com/
 
 ## Introduction
 This project is part of the **Data Engineering Zoomcamp 2025** and serves as the capstone project required to complete the course. The project aims to build an end-to-end data pipeline using cloud infrastructure, orchestration tools, and distributed computing technologies.
+
+## Project Overview
+The objective of this project is to extract a dataset from Kaggle, process it using Apache Spark, store the processed data in Google Cloud Storage (GCS) and BigQuery, transform it with dbt, and visualize insights using Looker Studio.
