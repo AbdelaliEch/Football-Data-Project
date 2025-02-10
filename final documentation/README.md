@@ -113,6 +113,6 @@ The data pipeline follows a structured ELT (Extract, Load, Transform) process:
      - Allows filtering by **Competition** and **Season** to view competition-specific statistics, including performance data for each season.
   6. **Transfers Dashboard**:
      - Displays transfer-related data, allowing users to filter by **Season** to see transfers trends.
-  7. **Additional Statistics Dashboard**:
+  7. **Additional Statistics**:
      - Provides aggregated statistics such as **Total Goals** and **Total Assists** by **Country**. 
 
