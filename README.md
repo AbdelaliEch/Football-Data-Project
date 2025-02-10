@@ -6,7 +6,7 @@ Quick Links: [Looker Studio Data Visualization](https://lookerstudio.google.com/
 
 ## Table of Contents
 - [Introduction](#introduction)
-- [Problem description and Project Overview](#problem-description-and-project-objective)
+- [Problem description and Project overview](#problem-description-and-project-objective)
 - [Dataset](#dataset)
 - [Data Pipeline](#data-pipeline)
 - [Tools and Technologies Used](#tools-and-technologies-used)
