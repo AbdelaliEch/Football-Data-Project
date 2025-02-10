@@ -79,28 +79,16 @@ The data pipeline follows a structured ELT (Extract, Load, Transform) process:
   - The jupyter notebook file is in `notebooks/spark_gcs.ipynb`.
 
 ### 5. Processing Data with Dataproc
-- **Set up Dataproc cluster**: Followed this [video](https://youtu.be/hqUbB9c8sKg?si=coujzlSGM3fRzqKz) to set up the Dataproc cluster on Google Cloud Platform.
+- **Set up Dataproc cluster**: Followed this [video](https://youtu.be/osAiAYahvh8?si=QDfmIj-xN3DZD7Yd) to set up the Dataproc cluster on Google Cloud Platform.
 - Converted the Jupyter notebook to a Python script
   - The python script is in `notebooks/spark_gcs_bigquery.py`.
-- Uploaded the script to GCS and ran the **Dataproc job** on the Google Cloud Platform:
+- Uploaded the script to GCS and ran the **Dataproc job** using the command:
   ```bash
   gcloud dataproc jobs submit pyspark \
       --cluster=project-cluster-2c88 \
       --region=europe-west2 \
       --jars=gs://spark-lib/bigquery/spark-3.4-bigquery-0.37.0.jar \
       gs://de-zoomcamp-project-449906_bucket/code/spark_gcs_bigquery.py
-
-### 5. Processing Data with Dataproc
-- **Set up Dataproc cluster**: Followed this [video](https://youtu.be/hqUbB9c8sKg?si=coujzlSGM3fRzqKz) to set up the Dataproc cluster on Google Cloud Platform.
-- Converted the Jupyter notebook to a Python script (`notebooks/spark_gcs_bigquery.py`).
-- Uploaded the script to GCS and ran the **Dataproc job**:
-  ```bash
-  gcloud dataproc jobs submit pyspark \
-      --cluster=project-cluster-2c88 \
-      --region=europe-west2 \
-      --jars=gs://spark-lib/bigquery/spark-3.4-bigquery-0.37.0.jar \
-      gs://de-zoomcamp-project-449906_bucket/code/spark_gcs_bigquery.py
-
 
 ### 6. Data Modeling with dbt Cloud
 - Set up **dbt Cloud** for data modeling.
