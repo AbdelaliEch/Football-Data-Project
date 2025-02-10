@@ -68,7 +68,7 @@ The data pipeline follows a structured ELT (Extract, Load, Transform) process:
   - The docker-compose file used is in `docker-compose.yaml` file located in the root directory.
 - Configured **GCP credentials** using Kestra to store the necessary GCP credentials to enable Kestra to interact with Google Cloud services
   - The flow used is in `kestra_flows/gcp_kv.yaml` file.
-- Implemented a **Kaggle data extraction and upload flow**
+- Implemented a **Kaggle data extraction and upload to GCS flow**
   - The flow used is in `kestra_flows/kaggle_download_gcs_upload.yaml` file.
 
 ### 4. Apache Spark Setup
