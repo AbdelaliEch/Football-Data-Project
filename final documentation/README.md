@@ -13,7 +13,7 @@ Quick Links: [Looker Studio Data Visualization](https://lookerstudio.google.com/
 - [Step-by-Step Implementation](#step-by-step-implementation)
 - [Reproducibility](#reproducibility)
 - [Acknowledgments](#acknowledgments)
-You can access the dataset on Kaggle [here](https://www.kaggle.com/datasets/davidcariboo/player-scores).
+
 ---
 
 ## Introduction
@@ -33,6 +33,7 @@ The dataset consists of the following files:
 - `player_valuations.csv`
 - `transfers.csv`
 - `competitions.csv`
+You can access the dataset on Kaggle [here](https://www.kaggle.com/datasets/davidcariboo/player-scores).
 
 ## Data Pipeline
 The data pipeline follows a structured ELT (Extract, Load, Transform) process:
