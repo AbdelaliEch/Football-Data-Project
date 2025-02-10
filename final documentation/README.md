@@ -8,8 +8,8 @@ Quick Links: [Looker Studio Data Visualization](https://lookerstudio.google.com/
 - [Introduction](#introduction)
 - [Project Overview](#project-overview)
 - [Dataset](#dataset)
-- [Data Pipeline](#data-pipeline)
 - [Tools and Technologies Used](#tools-and-technologies-used)
+- [Data Pipeline](#data-pipeline)
 - [Step-by-Step Implementation](#step-by-step-implementation)
 - [Reproducibility](#reproducibility)
 - [Acknowledgments](#acknowledgments)
@@ -37,14 +37,6 @@ The dataset consists of the following files:
 You can access the dataset on Kaggle [here](https://www.kaggle.com/datasets/davidcariboo/player-scores).  
 > **Note**: Please be aware that some of the data may not be 100% accurate or clean. During the data processing and transforming phases, some inconsistencies were addressed and certain records were cleaned to ensure the pipeline functions smoothly. As a result, some statistics may not be entirely precise due to the original dataset's nature.
 
-## Data Pipeline
-![Pipeline Diagram](https://github.com/AbdelaliEch/final_project/blob/main/images/Pipeline%20diagram.png)
-The data pipeline follows a structured ELT (Extract, Load, Transform) process:
-1. **Extract**: Download raw csv football data from Kaggle and store it in Google Cloud Storage (GCS).
-2. **Load and Process**: Use Apache Spark to process the csv data directly from GCS, convert it to Parquets and then reload the processed data back to both GCS and BigQuery.
-3. **Transform**: Utilize dbt to transform the data in BigQuery, creating staging, intermediate, and mart models.
-5. **Visualize**: Build dashboards and insights in Looker Studio to visualize the results.
-
 ## Tools and Technologies Used
 - **Google Cloud Platform (GCP)**: Includes Compute Engine, Cloud Storage, BigQuery, Dataproc
 - **Terraform**: Infrastructure as code for provisioning GCP resources
@@ -53,6 +45,14 @@ The data pipeline follows a structured ELT (Extract, Load, Transform) process:
 - **Apache Spark**: Distributed computing for data processing
 - **dbt Cloud**: Data modeling and transformation
 - **Looker Studio**: Data visualization for interactive dashboards
+
+## Data Pipeline
+![Pipeline Diagram](https://github.com/AbdelaliEch/final_project/blob/main/images/Pipeline%20diagram.png)
+The data pipeline follows a structured ELT (Extract, Load, Transform) process:
+1. **Extract**: Download raw csv football data from Kaggle and store it in Google Cloud Storage (GCS).
+2. **Load and Process**: Use Apache Spark to process the csv data directly from GCS, convert it to Parquets and then reload the processed data back to both GCS and BigQuery.
+3. **Transform**: Utilize dbt to transform the data in BigQuery, creating staging, intermediate, and mart models.
+5. **Visualize**: Build dashboards and insights in Looker Studio to visualize the results.
 
 ## Step-by-Step Implementation
 ### 1. Setting up GCP
