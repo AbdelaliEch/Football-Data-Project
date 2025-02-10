@@ -6,3 +6,7 @@ select
     stadium_seats, 
 from 
     {{ source('staging', 'clubs') }}
+where 
+    domestic_competition_id in (
+        select competition_id from {{ ref('stg_competitions') }}
+    )   

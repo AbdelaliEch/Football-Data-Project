@@ -16,3 +16,7 @@ and
     game_id in (
         select game_id from {{ ref('stg_games') }}
     )
+and
+    player_id in (
+        select player_id from {{ ref('stg_players') }}
+    ) 

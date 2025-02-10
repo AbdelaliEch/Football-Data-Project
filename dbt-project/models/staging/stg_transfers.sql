@@ -19,3 +19,7 @@ and
     to_club_id in (
         select club_id from {{ ref('stg_clubs') }}
     )
+and
+    player_id in (
+        select player_id from {{ ref('stg_players') }}
+    ) 
