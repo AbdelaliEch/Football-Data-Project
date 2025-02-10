@@ -35,6 +35,8 @@ The dataset consists of the following files:
 - `competitions.csv`  
 
 You can access the dataset on Kaggle [here](https://www.kaggle.com/datasets/davidcariboo/player-scores).
+Please note that while the dataset provides valuable insights, some of the data may not be fully accurate or clean. During the data processing phase, I addressed some inconsistencies and cleaned certain records to ensure the pipeline functions effectively. Therefore, some statistics may not be entirely precise due to the nature of the original dataset.
+> **Note**: While this dataset offers valuable insights, please be aware that some of the data may not be fully accurate or clean. During the data processing phase, some inconsistencies were addressed and certain records were cleaned to ensure the pipeline functions smoothly. As a result, some statistics may not be entirely precise due to the original dataset's nature.
 
 ## Data Pipeline
 The data pipeline follows a structured ELT (Extract, Load, Transform) process:
