@@ -63,24 +63,26 @@ The data pipeline follows a structured ELT (Extract, Load, Transform) process:
 - Provisioned **Google Cloud Storage (GCS) bucket** and **BigQuery dataset** using Terraform.
   - Terraform script is available in the repository under the `/terraform` directory.
 
-### 3. Kestra Workflow Setup
+### 3. Kestra Setup and Data Extraction Workflow
 - Installed **Kestra** using Docker Compose.
-  - Used the `docker-compose.yaml` file located in the project root directory.
+  - The docker-compose file used is in `docker-compose.yaml` file located in the root directory.
 - Configured **GCP credentials** in `kestra_flows/gcp_kv.yaml`.
 - Configured **GCP credentials** using Kestra to store the necessary GCP credentials to enable Kestra to interact with Google Cloud services
   - The flow used is in `kestra_flows/gcp_kv.yaml` file.
 - Implemented a **Kaggle data extraction and upload flow**
-  - The flow used is in (`kestra_flows/kaggle_download_gcs_upload.yaml`).
+  - The flow used is in `kestra_flows/kaggle_download_gcs_upload.yaml` file.
 
 ### 4. Apache Spark Setup
-- Installed **Apache Spark (version 3.4.4)** locally on the VM.
+- Installed **Apache Spark (version 3.4.4)** locally (for testing the data) on the VM.
   - Refer to the [installation guide](https://youtu.be/hqUbB9c8sKg?si=coujzlSGM3fRzqKz).
-- Linked **Spark** with **Google Cloud Storage** for data processing.
+- Created a **Jupyter notebook** and linked **Spark** with **Google Cloud Storage** to analyze the files columns and schema using Spark Dataframes.
   - [Tutorial on connecting Spark with GCS](https://youtu.be/Yyz293hBVcQ?si=ei5qu9n9NXTVTf2n).
-- Created a **Jupyter notebook** for testing Spark with GCS (`notebooks/spark_gcs.ipynb`).
+  - The jupyter notebook file is in `notebooks/spark_gcs.ipynb`.
 
 ### 5. Processing Data with Dataproc
-- Converted the Jupyter notebook to a Python script (`notebooks/spark_gcs_bigquery.py`).
+- **Set up Dataproc cluster**: Followed this [video](https://youtu.be/hqUbB9c8sKg?si=coujzlSGM3fRzqKz) to set up the Dataproc cluster on Google Cloud Platform.
+- Converted the Jupyter notebook to a Python script
+  - The python script is in `notebooks/spark_gcs_bigquery.py`.
 - Uploaded the script to GCS and ran the **Dataproc job** on the Google Cloud Platform:
   ```bash
   gcloud dataproc jobs submit pyspark \
@@ -88,6 +90,18 @@ The data pipeline follows a structured ELT (Extract, Load, Transform) process:
       --region=europe-west2 \
       --jars=gs://spark-lib/bigquery/spark-3.4-bigquery-0.37.0.jar \
       gs://de-zoomcamp-project-449906_bucket/code/spark_gcs_bigquery.py
+
+### 5. Processing Data with Dataproc
+- **Set up Dataproc cluster**: Followed this [video](https://youtu.be/hqUbB9c8sKg?si=coujzlSGM3fRzqKz) to set up the Dataproc cluster on Google Cloud Platform.
+- Converted the Jupyter notebook to a Python script (`notebooks/spark_gcs_bigquery.py`).
+- Uploaded the script to GCS and ran the **Dataproc job**:
+  ```bash
+  gcloud dataproc jobs submit pyspark \
+      --cluster=project-cluster-2c88 \
+      --region=europe-west2 \
+      --jars=gs://spark-lib/bigquery/spark-3.4-bigquery-0.37.0.jar \
+      gs://de-zoomcamp-project-449906_bucket/code/spark_gcs_bigquery.py
+
 
 ### 6. Data Modeling with dbt Cloud
 - Set up **dbt Cloud** for data modeling.
