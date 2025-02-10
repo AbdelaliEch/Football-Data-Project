@@ -1,5 +1,7 @@
 # Football Data Engineering Project
 
+![Players Dashboard](https://github.com/AbdelaliEch/final_project/blob/main/images/Players%20Dashboard.jpg)
+
 ## Overview
 This project focuses on building a **dashboard** using football data sourced from **Transfermarkt**. The dataset contains multiple CSV files, including details on players, clubs, games, appearances, valuations, and transfers. The project follows a structured data engineering workflow using **Google Cloud Platform (GCP)**, **Kestra**, **Spark**, **BigQuery**, **dbt**, and **Looker Studio**.
 
