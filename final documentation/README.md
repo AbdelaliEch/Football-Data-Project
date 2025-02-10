@@ -53,3 +53,50 @@ The data pipeline follows a structured ELT (Extract, Load, Transform) process:
 - **Apache Spark**: Distributed computing for data processing
 - **dbt Cloud**: Data modeling and transformation
 - **Looker Studio**: Data visualization for interactive dashboards
+
+## Step-by-Step Implementation
+### 1. Setting up GCP
+- Created a **Google Cloud Platform (GCP)** new project.
+- Followed [this video](https://youtu.be/ae-CV2KfoN0?si=jq2KO6LgsO2F_D_v) for setting up a **Virtual Machine (VM)**.
+
+### 2. Infrastructure Setup with Terraform
+- Provisioned **Google Cloud Storage (GCS) bucket** and **BigQuery dataset** using Terraform.
+  - Terraform script is available in the repository under the `/terraform` directory.
+
+### 3. Kestra Workflow Setup
+- Installed **Kestra** using Docker Compose.
+  - Used the `docker-compose.yaml` file located in the project root directory.
+- Configured **GCP credentials** in `kestra_flows/gcp_kv.yaml`.
+- Configured **GCP credentials** using Kestra to store the necessary GCP credentials to enable Kestra to interact with Google Cloud services
+  - The flow used is in `kestra_flows/gcp_kv.yaml` file.
+- Implemented a **Kaggle data extraction and upload flow**
+  - The flow used is in (`kestra_flows/kaggle_download_gcs_upload.yaml`).
+
+### 4. Apache Spark Setup
+- Installed **Apache Spark (version 3.4.4)** locally on the VM.
+  - Refer to the [installation guide](https://youtu.be/hqUbB9c8sKg?si=coujzlSGM3fRzqKz).
+- Linked **Spark** with **Google Cloud Storage** for data processing.
+  - [Tutorial on connecting Spark with GCS](https://youtu.be/Yyz293hBVcQ?si=ei5qu9n9NXTVTf2n).
+- Created a **Jupyter notebook** for testing Spark with GCS (`notebooks/spark_gcs.ipynb`).
+
+### 5. Processing Data with Dataproc
+- Converted the Jupyter notebook to a Python script (`notebooks/spark_gcs_bigquery.py`).
+- Uploaded the script to GCS and ran the **Dataproc job** on the Google Cloud Platform:
+  ```bash
+  gcloud dataproc jobs submit pyspark \
+      --cluster=project-cluster-2c88 \
+      --region=europe-west2 \
+      --jars=gs://spark-lib/bigquery/spark-3.4-bigquery-0.37.0.jar \
+      gs://de-zoomcamp-project-449906_bucket/code/spark_gcs_bigquery.py
+
+### 6. Data Modeling with dbt Cloud
+- Set up **dbt Cloud** for data modeling.
+  - Followed the [Setup Guide](https://github.com/ManuelGuerra1987/data-engineering-zoomcamp-notes/tree/main/4_Analytics-Engineering) and the [DataTalksClub Guide](https://github.com/DataTalksClub/data-engineering-zoomcamp/blob/main/04-analytics-engineering/dbt_cloud_setup.md).
+- Configured **BigQuery connection** in dbt Cloud.
+- Built **staging, intermediate, and mart models** in dbt to prepare the data for analysis and visualization.
+- Added **tests** and **documentation** for each model to ensure data quality and pipeline reliability.
+
+### 7. Visualization with Looker Studio
+- Created an interactive **Looker Studio dashboard** to display insights from the processed data.
+  - The dashboard visualizes key metrics and aggregated trends from the transformed data.
+  - You can access the dashboard [here](https://lookerstudio.google.com/reporting/70c08dd6-9771-41d6-a549-ab60b1409b00).
