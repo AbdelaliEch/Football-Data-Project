@@ -13,7 +13,7 @@ Quick Links: [Looker Studio Data Visualization](https://lookerstudio.google.com/
 - [Step-by-Step Implementation](#step-by-step-implementation)
 - [Reproducibility](#reproducibility)
 - [Acknowledgments](#acknowledgments)
-
+You can access the dataset on Kaggle [here](https://www.kaggle.com/datasets/davidcariboo/player-scores).
 ---
 
 ## Introduction
@@ -85,6 +85,7 @@ The data pipeline follows a structured ELT (Extract, Load, Transform) process:
       --region=europe-west2 \
       --jars=gs://spark-lib/bigquery/spark-3.4-bigquery-0.37.0.jar \
       gs://de-zoomcamp-project-449906_bucket/code/spark_gcs_bigquery.py
+  ```
 
 ### 6. Data Transformation with dbt Cloud
 - Set up **dbt Cloud** for data transformation.
