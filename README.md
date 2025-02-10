@@ -31,7 +31,7 @@ This project aims to solve the following problems:
 By building a structured ELT pipeline using cloud technologies, distributed computing, and automated workflows, this project enables efficient data processing, storage, and visualization, providing users with valuable insights into football statistics.  
 
 ## Dataset
-The dataset consists of the following files:
+The raw dataset we used consists of the following files:
 - `appearances.csv`
 - `players.csv`
 - `games.csv`
