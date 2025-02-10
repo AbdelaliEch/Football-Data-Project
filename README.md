@@ -73,7 +73,7 @@ The data pipeline follows a structured ELT (Extract, Load, Transform) process:
 - Followed [this video](https://youtu.be/ae-CV2KfoN0?si=jq2KO6LgsO2F_D_v) for setting up a **Virtual Machine (VM)**.
 
 ### 2. Infrastructure Setup with Terraform
-- Provisioned **Google Cloud Storage (GCS) bucket** and **BigQuery dataset** using Terraform.
+- Provisioned **Google Cloud Storage (GCS) bucket** and **BigQuery dataset** using Terraform script. [Terraform script](https://github.com/AbdelaliEch/final_project/blob/main/terraform/main.tf)
   - Terraform script is available in the repository under the `/terraform` directory.
 
 ### 3. Kestra Setup: Data Extraction and Loading Workflow
@@ -126,7 +126,7 @@ The data pipeline follows a structured ELT (Extract, Load, Transform) process:
      - Displays transfer-related data, allowing users to filter by **Season** to see transfers trends.
   7. **Additional Statistics**:
      - Provides aggregated statistics such as **Total Goals** and **Total Assists** by **Country**. 
-- You can access the dashboard [here](https://lookerstudio.google.com/reporting/70c08dd6-9771-41d6-a549-ab60b1409b00).
+- You can access the full Looker studio report [here](https://lookerstudio.google.com/reporting/70c08dd6-9771-41d6-a549-ab60b1409b00).
 
 ## Reproducibility
 To reproduce this project, follow the exact same steps outlined in the **Step-by-Step Implementation** section above, it offers clear and detailed instructions and it's easy to follow.
