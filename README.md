@@ -6,7 +6,7 @@ Quick Links: [Looker Studio Data Visualization](https://lookerstudio.google.com/
 
 ## Table of Contents
 - [Introduction](#introduction)
-- [Problem description and Project overview](#problem-description-and-project-objective)
+- [Problem description and Project objective](#problem-description-and-project-objective)
 - [Dataset](#dataset)
 - [Tools and Technologies Used](#tools-and-technologies-used)
 - [Data Pipeline](#data-pipeline)
@@ -17,7 +17,7 @@ Quick Links: [Looker Studio Data Visualization](https://lookerstudio.google.com/
 ---
 
 ## Introduction
-This project is part of the **Data Engineering Zoomcamp 2025** and serves as the capstone project required to complete the course. The project aims to build an end-to-end data pipeline using cloud infrastructure, orchestration tools, and distributed computing technologies.
+This project is part of the **Data Engineering Zoomcamp 2025** and serves as the capstone project required to complete the course. This project aims to build an end-to-end data pipeline leveraging cloud infrastructure, orchestration tools, and distributed computing technologies.
 
 ## Problem Description and Project Objective
 Football is one of the most popular sports worldwide, generating vast amounts of data related to players, clubs, competitions, and transfers. However, accessing and analyzing this data efficiently can be challenging due to its size, complexity, and inconsistency.  
@@ -28,7 +28,7 @@ This project aims to solve the following problems:
 - **Scalability**: Processing large datasets manually or on local machines can be inefficient and time-consuming.  
 - **Visualization & Insights**: Even when the data is cleaned, drawing meaningful insights from it requires intuitive and interactive visualizations.  
 
-By building a structured ELT pipeline using cloud technologies, distributed computing, and automated workflows, this project enables efficient data processing, storage, and visualization, providing users with valuable insights into football statistics.  
+By implementing a structured ELT pipeline with cloud technologies, distributed computing, and automated workflows, this project facilitates efficient data processing, storage, and visualization, delivering valuable insights into football statistics.  
 
 ## Dataset
 The raw dataset we used consists of the following files:
@@ -77,7 +77,7 @@ The data pipeline follows a structured ELT (Extract, Load, Transform) process:
 
 ### 3. Kestra Setup: Data Extraction and Loading Workflow
 - Installed **Kestra** using Docker compose [yaml file](https://github.com/AbdelaliEch/final_project/blob/main/docker-compose.yml).
-- Configured **GCP credentials** using [Kestra flow](https://github.com/AbdelaliEch/final_project/blob/main/kestra_flows/gcp_kv.yaml) to store the necessary GCP credentials to enable Kestra to interact with Google Cloud services
+- Configured **GCP credentials** using [Kestra flow](https://github.com/AbdelaliEch/final_project/blob/main/kestra_flows/gcp_kv.yaml) to store the necessary GCP credentials allowing Kestra to interact with Google Cloud services
 - Implemented a **Kaggle data extraction and upload to GCS** [flow](https://github.com/AbdelaliEch/final_project/blob/main/kestra_flows/kaggle_download_gcs_upload.yaml)
 
 ### 4. Apache Spark Setup
@@ -114,16 +114,16 @@ The data pipeline follows a structured ELT (Extract, Load, Transform) process:
      - Users can filter by **Player** and **Season** to view detailed statistics for a specific player during a given season or across multiple seasons.
   2. **Clubs Dashboard**:
      - Users can filter by **Club** and **Season** to explore statistics for a specific club during a given season or across multiple seasons.
-  4. **Competitions Dashboard**:
+  3. **Competitions Dashboard**:
      - Allows filtering by **Competition** and **Season** to view competition-specific statistics, including performance data for each season.
-  6. **Transfers Dashboard**:
+  4. **Transfers Dashboard**:
      - Displays transfer-related data, allowing users to filter by **Season** to see transfers trends.
-  7. **Additional Statistics**:
+  5. **Additional Statistics**:
      - Provides aggregated statistics such as **Total Goals** and **Total Assists** by **Country**. 
 - You can access the full Looker studio report [here](https://lookerstudio.google.com/reporting/70c08dd6-9771-41d6-a549-ab60b1409b00).
 
 ## Reproducibility
-To reproduce this project, follow the exact same steps outlined in the **Step-by-Step Implementation** section above, it offers clear and detailed instructions and it's easy to follow.
+To reproduce this project, follow the Step-by-Step Implementation section above, which provides clear and detailed instructions for easy replication.
 
 ## Acknowledgments
 Special thanks to **DataTalks.Club**, the instructors of the **Data Engineering Zoomcamp** and all the **Slack community** for the valuable learning experience.
