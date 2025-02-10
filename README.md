@@ -6,7 +6,7 @@
 4) Kestra setup with docker using Docker-compose  
 5) Setup GCP credentials in Kestra using "kestra_flows/gcp_kv.yaml" flow  
 6) Extract dataset from Kaggle and upload it to GCS bucket using "kestra_flows/kaggle_download_gcs_upload.yaml" flow  
-7) Installed Spark locally on the VM using this video: https://youtu.be/hqUbB9c8sKg?si=coujzlSGM3fRzqKz  
+7) Installed Spark locally (for testing) on the VM using this video: https://youtu.be/hqUbB9c8sKg?si=coujzlSGM3fRzqKz  
 But I didn't use the same version in the video, I installed spark 3.4.4  
 Then I linked spark with GCS in the "notebooks/spark_gcs.ipynb" notebook using this video: https://youtu.be/Yyz293hBVcQ?si=ei5qu9n9NXTVTf2n   
 And did some testing on the files to know the fields, sizes, schema...  
@@ -28,4 +28,6 @@ https://github.com/ManuelGuerra1987/data-engineering-zoomcamp-notes/tree/main/4_
 https://github.com/DataTalksClub/data-engineering-zoomcamp/blob/main/04-analytics-engineering/dbt_cloud_setup.md  
 when setuping the bigquery connection, after uploading key json file, click ctrl+f > type 'location' > location >
 type the same location you have in your bigquery dataset (for example europe-west2, ....)
-10) Create dbt staging, intermediate, mart models
+10) Create dbt staging, intermediate and mart models
+11) Added tests and documentation
+12) Made a Looker studio dashboard
