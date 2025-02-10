@@ -20,13 +20,13 @@ select
     player_id,
     season,
     count(case when 
-        type='substitutes' then 1 end) / count(1) as substituting_percentage,
+        type='substitutes' then 1 end) / count(1) * 100 as substituting_percentage,
     count(case when 
-        type='starting_lineup' then 1 end) / count(1) as starting_percentage,
+        type='starting_lineup' then 1 end) / count(1) * 100 as starting_percentage,
     sum(case when 
-        type='substitutes' then is_win end) / count(case when type='substitutes' then 1 end) as win_percentage_when_substitute,
+        type='substitutes' then is_win end) / count(case when type='substitutes' then 1 end) * 100 as win_percentage_when_substitute,
     sum(case when 
-        type='starting_lineup' then is_win end) / count(case when type='starting_lineup' then 1 end) as win_percentage_when_starting
+        type='starting_lineup' then is_win end) / count(case when type='starting_lineup' then 1 end) * 100 as win_percentage_when_starting
 from
     cte2 
 join 
