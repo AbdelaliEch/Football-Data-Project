@@ -101,3 +101,18 @@ The data pipeline follows a structured ELT (Extract, Load, Transform) process:
 - Created an interactive **Looker Studio dashboard** to display insights from the processed data.
   - The dashboard visualizes key metrics and aggregated trends from the transformed data.
   - You can access the dashboard [here](https://lookerstudio.google.com/reporting/70c08dd6-9771-41d6-a549-ab60b1409b00).
+ 
+### 7. Visualization with Looker Studio
+- Created an interactive **Looker Studio dashboard** to display key insights from the data processed and transformed.
+- The dashboard is divided into **5 pages**, each providing specific insights and enabling data exploration:
+  1. **Players Dashboard**:
+     - Users can filter by **Player** and **Season** to view detailed statistics for a specific player during a given season or across multiple seasons.
+  2. **Clubs Dashboard**:
+     - Users can filter by **Club** and **Season** to explore statistics for a specific club during a given season or across multiple seasons.
+  4. **Competitions Dashboard**:
+     - Allows filtering by **Competition** and **Season** to view competition-specific statistics, including performance data for each season.
+  6. **Transfers Dashboard**:
+     - Displays transfer-related data, allowing users to filter by **Season** to see transfers trends.
+  7. **Additional Statistics Dashboard**:
+     - Provides aggregated statistics such as **Total Goals** and **Total Assists** by **Country**. 
+
