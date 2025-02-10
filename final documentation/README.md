@@ -40,7 +40,7 @@ You can access the dataset on Kaggle [here](https://www.kaggle.com/datasets/davi
 ## Data Pipeline
 The data pipeline follows a structured ELT (Extract, Load, Transform) process:
 1. **Extract**: Download raw csv football data from Kaggle and store it in Google Cloud Storage (GCS).
-2. **Load and Process**: Use Apache Spark to process the data directly from GCS, convert it to Parquets and then reload the processed data back to both GCS and BigQuery.
+2. **Load and Process**: Use Apache Spark to process the csv data directly from GCS, convert it to Parquets and then reload the processed data back to both GCS and BigQuery.
 3. **Transform**: Utilize dbt to transform the data in BigQuery, creating staging, intermediate, and mart models.
 5. **Visualize**: Build dashboards and insights in Looker Studio to visualize the results.
 
@@ -79,7 +79,7 @@ The data pipeline follows a structured ELT (Extract, Load, Transform) process:
 
 ### 5. Processing Data with Dataproc
 - **Set up Dataproc cluster**: Followed this [video](https://youtu.be/osAiAYahvh8?si=QDfmIj-xN3DZD7Yd) to set up the Dataproc cluster on Google Cloud Platform.
-- Converted the previous Jupyter notebook to a Python script
+- Converted the previous Jupyter notebook to a Python script and modified it to make it convert the CSV data to Parquets and then reload the processed parquets data back to both GCS and BigQuery.
   - The python script is in `notebooks/spark_gcs_bigquery.py`.
 - Uploaded the script to GCS and ran the **Dataproc job** using the command:
   ```bash
