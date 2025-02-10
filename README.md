@@ -105,8 +105,9 @@ The data pipeline follows a structured ELT (Extract, Load, Transform) process:
   ```
 
 ### 6. Data Transformation with dbt Cloud
-- Set up **dbt Cloud** for data transformation.
-  - Followed the [Setup Guide](https://github.com/ManuelGuerra1987/data-engineering-zoomcamp-notes/tree/main/4_Analytics-Engineering) and the [DataTalksClub Guide](https://github.com/DataTalksClub/data-engineering-zoomcamp/blob/main/04-analytics-engineering/dbt_cloud_setup.md).
+- Set up a **dbt cloud project** following these guides:
+  - [Manuel Guerra's Notes](https://github.com/ManuelGuerra1987/data-engineering-zoomcamp-notes/tree/main/4_Analytics-Engineering)
+  - [DataTalksClub's dbt setup](https://github.com/DataTalksClub/data-engineering-zoomcamp/blob/main/04-analytics-engineering/dbt_cloud_setup.md)
 - Configured **BigQuery connection** in dbt Cloud.
 - Built **staging, intermediate, and mart models** in dbt to prepare the data for analysis and visualization along with tests and documentation to ensure data quality and pipeline reliability.
   - The full dbt project is available in the repository under the `/dbt-project` directory
