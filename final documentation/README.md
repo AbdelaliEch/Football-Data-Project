@@ -18,3 +18,6 @@ Quick Links: [Looker Studio Data Visualization](https://lookerstudio.google.com/
 - [Acknowledgments](#acknowledgments)
 
 ---
+
+## Introduction
+This project is part of the **Data Engineering Zoomcamp 2025** and serves as the capstone project required to complete the course. The project aims to build an end-to-end data pipeline using cloud infrastructure, orchestration tools, and distributed computing technologies.
