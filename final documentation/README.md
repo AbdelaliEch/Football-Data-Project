@@ -97,10 +97,6 @@ The data pipeline follows a structured ELT (Extract, Load, Transform) process:
 - Built **staging, intermediate, and mart models** in dbt to prepare the data for analysis and visualization along with tests and documentation to ensure data quality and pipeline reliability.
   - The full dbt project is available in the repository under the `/dbt-project` directory
 
-### 7. Visualization with Looker Studio
-- Created an interactive **Looker Studio dashboard** to display insights from the processed data.
-  - The dashboard visualizes key metrics and aggregated trends from the transformed data.
-  - You can access the dashboard [here](https://lookerstudio.google.com/reporting/70c08dd6-9771-41d6-a549-ab60b1409b00).
  
 ### 7. Visualization with Looker Studio
 - Created an interactive **Looker Studio dashboard** to display key insights from the data processed and transformed.
@@ -115,4 +111,8 @@ The data pipeline follows a structured ELT (Extract, Load, Transform) process:
      - Displays transfer-related data, allowing users to filter by **Season** to see transfers trends.
   7. **Additional Statistics**:
      - Provides aggregated statistics such as **Total Goals** and **Total Assists** by **Country**. 
+- You can access the dashboard [here](https://lookerstudio.google.com/reporting/70c08dd6-9771-41d6-a549-ab60b1409b00).
+
+## Reproducibility
+To reproduce this project, follow the exact same steps outlined in the **Step-by-Step Implementation** section above.
 
