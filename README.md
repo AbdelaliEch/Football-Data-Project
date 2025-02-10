@@ -73,11 +73,10 @@ The data pipeline follows a structured ELT (Extract, Load, Transform) process:
 - Followed [this video](https://youtu.be/ae-CV2KfoN0?si=jq2KO6LgsO2F_D_v) for setting up a **Virtual Machine (VM)**.
 
 ### 2. Infrastructure Setup with Terraform
-- Provisioned **Google Cloud Storage (GCS) bucket** and **BigQuery dataset** using Terraform script. [Terraform script](https://github.com/AbdelaliEch/final_project/blob/main/terraform/main.tf)
-  - Terraform script is available in the repository under the `/terraform` directory.
+- Provisioned **Google Cloud Storage (GCS) bucket** and **BigQuery dataset** using [Terraform script](https://github.com/AbdelaliEch/final_project/blob/main/terraform/main.tf).
 
 ### 3. Kestra Setup: Data Extraction and Loading Workflow
-- Installed **Kestra** using Docker Compose.
+- Installed **Kestra** using [Docker compose](https://github.com/AbdelaliEch/final_project/blob/main/docker-compose.yml).
   - The docker-compose file used is in `docker-compose.yaml` file located in the root directory.
 - Configured **GCP credentials** using Kestra to store the necessary GCP credentials to enable Kestra to interact with Google Cloud services
   - The flow used is in `kestra_flows/gcp_kv.yaml` file.
