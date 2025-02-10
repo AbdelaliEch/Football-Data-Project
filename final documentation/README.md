@@ -7,6 +7,7 @@ Quick Links: [Looker Studio Data Visualization](https://lookerstudio.google.com/
 ## Table of Contents
 - [Introduction](#introduction)
 - [Project Overview](#project-overview)
+- [Dataset](#dataset)
 - [Data Pipeline](#data-pipeline)
 - [Tools and Technologies Used](#tools-and-technologies-used)
 - [Step-by-Step Implementation](#step-by-step-implementation)
@@ -24,3 +25,15 @@ This project is part of the **Data Engineering Zoomcamp 2025** and serves as the
 
 ## Project Overview
 The objective of this project is to extract a dataset from Kaggle, process it using Apache Spark, store the processed data in Google Cloud Storage (GCS) and BigQuery, transform it with dbt, and visualize insights using Looker Studio.
+
+## Dataset
+The dataset consists of the following files:
+- `appearances.csv`
+- `players.csv`
+- `games.csv`
+- `clubs.csv`
+- `club_games.csv`
+- `game_lineups.csv`
+- `player_valuations.csv`
+- `transfers.csv`
+- `competitions.csv`
