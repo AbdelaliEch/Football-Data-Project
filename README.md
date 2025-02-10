@@ -31,3 +31,7 @@ type the same location you have in your bigquery dataset (for example europe-wes
 10) Create dbt staging, intermediate and mart models
 11) Added tests and documentation
 12) Made a Looker studio dashboard
+
+
+Next step: 
+    - Documenting the whole project in this README file
