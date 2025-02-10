@@ -39,8 +39,8 @@ You can access the dataset on Kaggle [here](https://www.kaggle.com/datasets/davi
 
 ## Data Pipeline
 The data pipeline follows a structured ELT (Extract, Load, Transform) process:
-1. **Extract**: Download raw football data from Kaggle and store it in Google Cloud Storage (GCS).
-2. **Load and Process**: Use Apache Spark to process the data directly from GCS and then reload the processed data back to both GCS and BigQuery.
+1. **Extract**: Download raw csv football data from Kaggle and store it in Google Cloud Storage (GCS).
+2. **Load and Process**: Use Apache Spark to process the data directly from GCS, convert it to Parquets and then reload the processed data back to both GCS and BigQuery.
 3. **Transform**: Utilize dbt to transform the data in BigQuery, creating staging, intermediate, and mart models.
 5. **Visualize**: Build dashboards and insights in Looker Studio to visualize the results.
 
