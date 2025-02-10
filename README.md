@@ -128,7 +128,7 @@ The data pipeline follows a structured ELT (Extract, Load, Transform) process:
 - You can access the dashboard [here](https://lookerstudio.google.com/reporting/70c08dd6-9771-41d6-a549-ab60b1409b00).
 
 ## Reproducibility
-To reproduce this project, follow the exact same steps outlined in the **Step-by-Step Implementation** section above.
+To reproduce this project, follow the exact same steps outlined in the **Step-by-Step Implementation** section above, it offers clear and detailed instructions and it's easy to follow.
 
 ## Acknowledgments
 Special thanks to **DataTalks.Club** and all the instructors of the **Data Engineering Zoomcamp** for the valuable learning experience.
