@@ -19,8 +19,16 @@ Quick Links: [Looker Studio Data Visualization](https://lookerstudio.google.com/
 ## Introduction
 This project is part of the **Data Engineering Zoomcamp 2025** and serves as the capstone project required to complete the course. The project aims to build an end-to-end data pipeline using cloud infrastructure, orchestration tools, and distributed computing technologies.
 
-## Project Overview
-The objective of this project is to extract a dataset from Kaggle, process it using Apache Spark, store the processed data in Google Cloud Storage (GCS) and BigQuery, transform it with dbt, and visualize insights using Looker Studio.
+## Problem Description and Project Objective
+Football is one of the most popular sports worldwide, generating vast amounts of data related to players, clubs, competitions, and transfers. However, accessing and analyzing this data efficiently can be challenging due to its size, complexity, and inconsistency.  
+
+This project aims to solve the following problems:  
+- **Data Accessibility**: Raw football data is often scattered across different sources, making it difficult to consolidate and analyze.  
+- **Data Cleaning & Processing**: The dataset contains inconsistencies and missing values that need to be handled before analysis.  
+- **Scalability**: Processing large datasets manually or on local machines can be inefficient and time-consuming.  
+- **Visualization & Insights**: Even when the data is cleaned, drawing meaningful insights from it requires intuitive and interactive visualizations.  
+
+By building a structured ELT pipeline using cloud technologies, distributed computing, and automated workflows, this project enables efficient data processing, storage, and visualization, providing users with valuable insights into football statistics.  
 
 ## Dataset
 The dataset consists of the following files:
