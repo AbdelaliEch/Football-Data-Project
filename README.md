@@ -83,14 +83,12 @@ The data pipeline follows a structured ELT (Extract, Load, Transform) process:
 ### 4. Apache Spark Setup
 - Installed **Apache Spark (version 3.4.4)** locally (for testing the data) on the VM.
   - Refer to the [installation guide](https://youtu.be/hqUbB9c8sKg?si=coujzlSGM3fRzqKz).
-- Created a **Jupyter notebook** and linked **Spark** with **Google Cloud Storage** to analyze the files columns and schema using Spark Dataframes.
+- Created a [Jupyter notebook](https://github.com/AbdelaliEch/final_project/blob/main/notebooks/spark_gcs.ipynb) and linked **Spark** with **Google Cloud Storage** to analyze the files columns and schema using Spark Dataframes.
   - [Tutorial on connecting Spark with GCS](https://youtu.be/Yyz293hBVcQ?si=ei5qu9n9NXTVTf2n).
-  - The jupyter notebook file is in `notebooks/spark_gcs.ipynb`.
 
 ### 5. Processing Data with Dataproc
 - **Set up Dataproc cluster**: Followed this [video](https://youtu.be/osAiAYahvh8?si=QDfmIj-xN3DZD7Yd) to set up the Dataproc cluster on Google Cloud Platform.
-- Converted the previous Jupyter notebook to a Python script and modified it to make it convert the CSV data to Parquets and then reload the processed parquets data back to both GCS and BigQuery.
-  - The python script is in `notebooks/spark_gcs_bigquery.py`.
+- Converted the previous Jupyter notebook to a [Python script](https://github.com/AbdelaliEch/final_project/blob/main/notebooks/spark_gcs_bigquery.py) and modified it to make it convert the CSV data to Parquets and then reload the processed parquets data back to both GCS and BigQuery.
 - Uploaded the script to GCS and ran the **Dataproc job** using the command:
   ```bash
   gcloud dataproc jobs submit pyspark \
@@ -105,7 +103,7 @@ The data pipeline follows a structured ELT (Extract, Load, Transform) process:
   - [Manuel Guerra's Notes](https://github.com/ManuelGuerra1987/data-engineering-zoomcamp-notes/tree/main/4_Analytics-Engineering)
   - [DataTalksClub's dbt setup](https://github.com/DataTalksClub/data-engineering-zoomcamp/blob/main/04-analytics-engineering/dbt_cloud_setup.md)
 - Configured **BigQuery connection** in dbt Cloud.
-- Built **staging, intermediate, and mart models** in dbt to prepare the data for analysis and visualization along with tests and documentation to ensure data quality and pipeline reliability.
+- Built [staging, intermediate, and mart models](https://github.com/AbdelaliEch/final_project/tree/main/dbt-project/models) in dbt to prepare the data for analysis and visualization along with tests and documentation to ensure data quality and pipeline reliability.
   - The full dbt project is available in the repository under the `/dbt-project` directory
 
  
