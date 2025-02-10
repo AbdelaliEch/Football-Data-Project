@@ -39,12 +39,11 @@ The dataset consists of the following files:
 - `competitions.csv`
 
 ## Data Pipeline
-The data pipeline follows a structured process:
+The data pipeline follows a structured ELT (Extract, Load, Transform) process:
 1. **Extract**: Download the dataset from Kaggle and store it in Google Cloud Storage (GCS).
-2. **Load**: Provision GCS bucket and BigQuery dataset using Terraform.
-3. **Transform**: Process data using Apache Spark and load the results into BigQuery.
-4. **Model**: Utilize dbt to create staging, intermediate, and final models.
-5. **Visualize**: Create dashboards and insights in Looker Studio.
+2. **Load and Process**: Use Apache Spark to process the data directly from GCS and then reload the processed data back to both GCS and BigQuery.
+3. **Transform**: Utilize dbt to transform the data in BigQuery, creating staging, intermediate, and mart models.
+5. **Visualize**: Build dashboards and insights in Looker Studio to visualize the results.
 
 ## Tools and Technologies Used
 - **Google Cloud Platform (GCP)**: Includes Compute Engine, Cloud Storage, BigQuery, Dataproc
