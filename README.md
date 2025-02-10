@@ -76,12 +76,9 @@ The data pipeline follows a structured ELT (Extract, Load, Transform) process:
 - Provisioned **Google Cloud Storage (GCS) bucket** and **BigQuery dataset** using [Terraform script](https://github.com/AbdelaliEch/final_project/blob/main/terraform/main.tf).
 
 ### 3. Kestra Setup: Data Extraction and Loading Workflow
-- Installed **Kestra** using [Docker compose](https://github.com/AbdelaliEch/final_project/blob/main/docker-compose.yml).
-  - The docker-compose file used is in `docker-compose.yaml` file located in the root directory.
-- Configured **GCP credentials** using Kestra to store the necessary GCP credentials to enable Kestra to interact with Google Cloud services
-  - The flow used is in `kestra_flows/gcp_kv.yaml` file.
-- Implemented a **Kaggle data extraction and upload to GCS flow**
-  - The flow used is in `kestra_flows/kaggle_download_gcs_upload.yaml` file.
+- Installed **Kestra** using Docker compose [yaml file](https://github.com/AbdelaliEch/final_project/blob/main/docker-compose.yml).
+- Configured **GCP credentials** using [Kestra flow](https://github.com/AbdelaliEch/final_project/blob/main/kestra_flows/gcp_kv.yaml) to store the necessary GCP credentials to enable Kestra to interact with Google Cloud services
+- Implemented a **Kaggle data extraction and upload to GCS** [flow](https://github.com/AbdelaliEch/final_project/blob/main/kestra_flows/kaggle_download_gcs_upload.yaml)
 
 ### 4. Apache Spark Setup
 - Installed **Apache Spark (version 3.4.4)** locally (for testing the data) on the VM.
