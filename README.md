@@ -126,4 +126,4 @@ The data pipeline follows a structured ELT (Extract, Load, Transform) process:
 To reproduce this project, follow the exact same steps outlined in the **Step-by-Step Implementation** section above, it offers clear and detailed instructions and it's easy to follow.
 
 ## Acknowledgments
-Special thanks to **DataTalks.Club** and all the instructors of the **Data Engineering Zoomcamp** for the valuable learning experience.
+Special thanks to **DataTalks.Club**, the instructors of the **Data Engineering Zoomcamp** and all the **Slack community** for the valuable learning experience.
