@@ -59,10 +59,11 @@ You can access the dataset on Kaggle [here](https://www.kaggle.com/datasets/davi
 The data pipeline follows a structured ELT (Extract, Load, Transform) process:
 1. **Extract**: Download raw csv football data from Kaggle and store it in Google Cloud Storage (GCS).
 2. **Load and Process**:  
-   - Use Apache Spark to read the CSV files directly from GCS with schema inference.  
-   - Convert the data to Parquet format to ensure schema consistency and optimized storage.  
-   - Save the Parquet files back to GCS.  
-   - Read the Parquet files from GCS and reload them into BigQuery for further transformations.
+   - A **Dataproc job** runs a **Python script** to process the data.  
+   - It reads raw CSV files from GCS with schema inference using Spark.  
+   - The data is then converted to **Parquet format** to preserve schema consistency and optimize storage.  
+   - The Parquet files are saved back to GCS.  
+   - Finally, the job reads the Parquet files from GCS and loads them into BigQuery as tables.  
 3. **Transform**: Utilize dbt to transform the data in BigQuery, creating staging, intermediate, and mart models.
 4. **Visualize**: Build dashboards and insights in Looker Studio to visualize the results.
 
