@@ -73,3 +73,36 @@ The data pipeline follows a structured process:
       --region=europe-west2 \
       --jars=gs://spark-lib/bigquery/spark-3.4-bigquery-0.37.0.jar \
       gs://de-zoomcamp-project-449906_bucket/code/spark_gcs_bigquery.py
+
+### 6. Data Modeling with dbt Cloud
+- Set up **dbt Cloud** for data modeling.
+  - Followed the [Setup Guide](https://github.com/ManuelGuerra1987/data-engineering-zoomcamp-notes/tree/main/4_Analytics-Engineering) and the [DataTalksClub Guide](https://github.com/DataTalksClub/data-engineering-zoomcamp/blob/main/04-analytics-engineering/dbt_cloud_setup.md).
+- Configured **BigQuery connection** in dbt Cloud.
+- Built **staging, intermediate, and mart models** in dbt to prepare the data for analysis and visualization.
+- Added **tests** and **documentation** for each model to ensure data quality and pipeline reliability.
+
+### 7. Visualization with Looker Studio
+- Created an interactive **Looker Studio dashboard** to display insights from the processed data.
+  - The dashboard visualizes key metrics and aggregated trends from the transformed data.
+  - You can access the dashboard [here](https://lookerstudio.google.com/reporting/70c08dd6-9771-41d6-a549-ab60b1409b00).
+
+### Reproducibility
+To reproduce the project, follow these steps:
+1. **Setup GCP & Terraform**: Run the Terraform scripts located in the `/terraform` directory to provision GCP infrastructure (such as GCS buckets and BigQuery datasets).
+2. **Deploy Kestra**: Use Docker Compose to deploy the Kestra orchestrator on your local machine.
+3. **Run the ETL pipeline**: Execute the Kestra flows to handle data extraction, processing, and uploading.
+4. **Process Data with Apache Spark**: Submit the Spark job to Dataproc to process and transform the data.
+5. **Model Data with dbt**: Use dbt Cloud to build and deploy staging, intermediate, and mart models.
+6. **Visualize Data in Looker Studio**: Connect your BigQuery dataset to Looker Studio and create dashboards for analysis.
+
+### Dashboard and Visualization
+The final dataset is visualized in an interactive **Looker Studio dashboard**, which includes:
+- **Summary statistics**: Overview of key metrics from the processed data.
+- **Aggregated trends**: Visualizations of long-term trends and correlations.
+- **Key performance indicators (KPIs)**: Insights derived from the dbt models, showing the most relevant data points for analysis.
+
+### Future Enhancements
+- Implement **CI/CD pipelines** to automate deployments for Spark jobs and dbt models.
+- Add **Airflow/Kestra scheduling** to automate data pipeline execution and updates.
+- Integrate **Great Expectations** to improve **data quality testing** and ensure pipeline reliability.
+
