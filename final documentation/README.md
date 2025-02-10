@@ -90,8 +90,8 @@ The data pipeline follows a structured ELT (Extract, Load, Transform) process:
       --jars=gs://spark-lib/bigquery/spark-3.4-bigquery-0.37.0.jar \
       gs://de-zoomcamp-project-449906_bucket/code/spark_gcs_bigquery.py
 
-### 6. Data Modeling with dbt Cloud
-- Set up **dbt Cloud** for data modeling.
+### 6. Data Transformation with dbt Cloud
+- Set up **dbt Cloud** for data transformation.
   - Followed the [Setup Guide](https://github.com/ManuelGuerra1987/data-engineering-zoomcamp-notes/tree/main/4_Analytics-Engineering) and the [DataTalksClub Guide](https://github.com/DataTalksClub/data-engineering-zoomcamp/blob/main/04-analytics-engineering/dbt_cloud_setup.md).
 - Configured **BigQuery connection** in dbt Cloud.
 - Built **staging, intermediate, and mart models** in dbt to prepare the data for analysis and visualization.
