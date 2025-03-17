@@ -65,7 +65,7 @@ models:
         data_type: float64
         description: ""
 
-  - name: mart_competition_summary
+  - name: mart_competitions_summary
     description: ""
     columns:
       - name: season
@@ -92,7 +92,7 @@ models:
         data_type: float64
         description: ""
 
-  - name: dim_teams
+  - name: dim_clubs
     description: ""
     columns:
       - name: club_id
@@ -183,7 +183,7 @@ models:
         data_type: float64
         description: ""
 
-  - name: mart_transfer_trends
+  - name: mart_transfers_trends
     description: ""
     columns:
       - name: transfer_season
