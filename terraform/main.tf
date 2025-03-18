@@ -14,7 +14,7 @@ provider "google" {
 }
 
 
-resource "google_storage_bucket" "example_bucket" {
+resource "google_storage_bucket" {
   name          = var.gcs_bucket_name
   location      = var.location
   force_destroy = true
@@ -32,7 +32,15 @@ resource "google_storage_bucket" "example_bucket" {
 
 
 
-resource "google_bigquery_dataset" "example_dataset" {
-  dataset_id = var.bq_dataset_name
+resource "google_bigquery_dataset" "de_zoomcamp_project_dataset" {
+  dataset_id = var.bq_dataset_name1
+  location   = var.location
+}
+resource "google_bigquery_dataset" "dbt_development_dataset" {
+  dataset_id = var.bq_dataset_name2
+  location   = var.location
+}
+resource "google_bigquery_dataset" "dbt_production_dataset" {
+  dataset_id = var.bq_dataset_name3
   location   = var.location
 }

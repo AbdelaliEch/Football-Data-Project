@@ -1,8 +1,8 @@
 # Football Data Engineering Project
 
-Quick Links: [Looker Studio Data Visualization](https://lookerstudio.google.com/reporting/70c08dd6-9771-41d6-a549-ab60b1409b00) | [Grading guide](https://github.com/AbdelaliEch/Football-Data-Engineering-Project/blob/main/grading_guide.md)
+Quick Links: [Looker Studio Data Visualization](https://lookerstudio.google.com/reporting/467df289-21d8-4cfd-8f27-a890f698a903) | [Grading guide](https://github.com/AbdelaliEch/Football-Data-Project/blob/main/grading_guide.md)
 
-![Players Dashboard](https://github.com/AbdelaliEch/Football-Data-Engineering-Project/blob/main/images/Players%20Dashboard.jpg)
+![Players Dashboard](https://github.com/AbdelaliEch/Football-Data-Project/blob/main/images/Players%20Dashboard.jpg)
 
 ## Table of Contents
 - [Introduction](#introduction)
@@ -31,7 +31,7 @@ This project aims to solve the following problems:
 By implementing a structured ELT pipeline with cloud technologies, distributed computing, and automated workflows, this project facilitates efficient data processing, storage, and visualization, delivering valuable insights into football statistics.  
 
 ## Dataset
-The raw dataset we used consists of the following files:
+The raw dataset used consists of the following files:
 - `appearances.csv`
 - `players.csv`
 - `games.csv`
@@ -43,71 +43,58 @@ The raw dataset we used consists of the following files:
 - `competitions.csv`  
 
 You can access the dataset on Kaggle [here](https://www.kaggle.com/datasets/davidcariboo/player-scores).  
-> **Note**: Please be aware that some of the data may not be 100% accurate or clean. During the data processing and transforming phases, some inconsistencies were addressed and certain records were cleaned to ensure the pipeline functions smoothly. As a result, some statistics may not be entirely precise due to the original dataset's nature.
+> **Note**: Please be aware that some of the data may not be 100% accurate and clean. During the data processing and transforming phases, some inconsistencies were addressed and certain records were cleaned to ensure the pipeline functions smoothly. As a result, some statistics may not be entirely precise due to the original dataset's nature.
 
-## Tools and Technologies Used
-- **Google Cloud Platform (GCP)**: Includes Compute Engine, Cloud Storage, BigQuery, Dataproc
-- **Terraform**: Infrastructure as code for provisioning GCP resources
-- **Kestra**: Workflow orchestration tool for managing the ELT pipeline
-- **Docker & Docker Compose**: Containerization for environment setup
-- **Apache Spark**: Distributed computing for data processing
-- **dbt Cloud**: Data modeling and transformation
-- **Looker Studio**: Data visualization for interactive dashboards
+## Tech Stack  
+- **Cloud Platform:** Google Cloud Platform (GCP)  
+- **Infrastructure as Code:** Terraform  
+- **Orchestration:** Apache Airflow  
+- **Data Processing:** PySpark (Dataproc)  
+- **Data Transformation:** dbt Cloud  
+- **Storage & Warehousing:** Google Cloud Storage (GCS), BigQuery  
+- **Visualization:** Looker Studio 
 
 ## Data Pipeline
-![Pipeline Diagram](https://github.com/AbdelaliEch/Football-Data-Engineering-Project/blob/main/images/Pipeline%20diagram.png)
+![Pipeline Diagram](https://github.com/AbdelaliEch/Football-Data-Project/blob/main/images/Pipeline%20diagram.png)
 The data pipeline follows a structured ELT (Extract, Load, Transform) process:
 1. **Extract**: Download raw csv football data from Kaggle and store it in Google Cloud Storage (GCS).
-2. **Load and Process**:  
-   - A **Dataproc job** runs a **Python script** to process the data.  
-   - It reads raw CSV files from GCS with schema inference using Spark.  
-   - The data is then converted to **Parquet format** to preserve schema consistency and optimize storage.  
-   - The Parquet files are saved back to GCS.  
-   - Finally, the job reads the Parquet files from GCS and loads them into BigQuery as tables.  
+2. **Process and Load**:  
+   - A **Dataproc PySpark job** is submitted to process and clean the data.  
+   - It reads the raw CSV files from GCS.  
+   - Performs necessary processing, cleaning, and filtering on the raw data.  
+   - The cleaned data is then loaded into **BigQuery** as tables.
 3. **Transform**: Utilize dbt to transform the data in BigQuery, creating staging, intermediate, and mart models.
 4. **Visualize**: Build dashboards and insights in Looker Studio to visualize the results.
 
 ## Step-by-Step Implementation
-### 1. Setting up GCP
+### 1. Setting up GCP and VM
 - Created a **Google Cloud Platform (GCP)** new project.
-- Followed [this video](https://youtu.be/ae-CV2KfoN0?si=jq2KO6LgsO2F_D_v) for setting up a **Virtual Machine (VM)**.
+- Deployed a **Virtual Machine (VM)** following [this setup guide](https://youtu.be/ae-CV2KfoN0?si=jq2KO6LgsO2F_D_v).  
 
 ### 2. Infrastructure Setup with Terraform
-- Provisioned **Google Cloud Storage (GCS) bucket** and **BigQuery dataset** using [Terraform script](https://github.com/AbdelaliEch/Football-Data-Engineering-Project/blob/main/terraform/main.tf).
+- Provisioned **Google Cloud Storage (GCS) bucket** and **BigQuery datasets** using [Terraform script](https://github.com/AbdelaliEch/Football-Data-Project/blob/main/terraform/main.tf).
 
-### 3. Kestra Setup: Data Extraction and Loading Workflow
-- Installed **Kestra** using Docker compose [yaml file](https://github.com/AbdelaliEch/Football-Data-Engineering-Project/blob/main/docker-compose.yml).
-- Configured **GCP credentials** using [Kestra flow](https://github.com/AbdelaliEch/Football-Data-Engineering-Project/blob/main/kestra_flows/gcp_kv.yaml) to store the necessary GCP credentials allowing Kestra to interact with Google Cloud services
-- Implemented a **Kaggle data extraction and upload to GCS** [flow](https://github.com/AbdelaliEch/Football-Data-Engineering-Project/blob/main/kestra_flows/kaggle_download_gcs_upload.yaml)
+### 3. Developing Data Processing & Transformation Scripts  
+- Developed a **PySpark script** to process raw data from gcs and upload it to Bigquery in tables format.  
+  - 📜 [PySpark script](https://github.com/AbdelaliEch/Football-Data-Project/blob/main/dataproc_script.py)  
+- Created a **dbt Cloud project** and built staging, intermediate, and mart models to prepare data for analysis.  
+  - 📂 [dbt models](https://github.com/AbdelaliEch/Football-Data-Project/tree/main/dbt_project/models) 
+  - 📂 [dbt full project](https://github.com/AbdelaliEch/Football-Data-Project/tree/main/dbt_project) 
+  - Included **tests and documentation** to ensure data quality and pipeline reliability.
 
-### 4. Apache Spark Setup
-- Installed **Apache Spark (version 3.4.4)** locally (for testing the data) on the VM.
-  - Refer to the [installation guide](https://youtu.be/hqUbB9c8sKg?si=coujzlSGM3fRzqKz).
-- Created a [Jupyter notebook](https://github.com/AbdelaliEch/Football-Data-Engineering-Project/blob/main/notebooks/spark_gcs.ipynb) and linked **Spark** with **Google Cloud Storage** to analyze the files columns and schema using Spark Dataframes.
-  - [Tutorial on connecting Spark with GCS](https://youtu.be/Yyz293hBVcQ?si=ei5qu9n9NXTVTf2n).
+### 4. Automating the Data Pipeline with Airflow  
+Once the data processing and transformation scripts were developed, **Apache Airflow** was used to automate the end-to-end pipeline
+- Set up **Astronomer Airflow Docker** by following [this tutorial](https://youtu.be/ae-CV2KfoN0?si=jq2KO6LgsO2F_D_v).  
+- Configured necessary connections in Airflow UI (**Kaggle, GCP, and dbt Cloud**).   
+#### 🔹 DAG Workflow  
+1. **Download Dataset from Kaggle** → Fetches football player statistics via the Kaggle API.  
+2. **Upload Dataset to GCS** → Stores raw data in a **Google Cloud Storage (GCS) bucket**.  
+3. **Process Data with PySpark on Dataproc** → Runs a PySpark job on **Google Dataproc** to clean and preprocess data before loading it into **BigQuery**.  
+4. **Transform Data using dbt** → Runs dbt models to structure and optimize data in **BigQuery**.  
 
-### 5. Processing Data with Dataproc
-- **Set up Dataproc cluster**: Followed this [video](https://youtu.be/osAiAYahvh8?si=QDfmIj-xN3DZD7Yd) to set up the Dataproc cluster on Google Cloud Platform.
-- Converted the previous Jupyter notebook to a [Python script](https://github.com/AbdelaliEch/Football-Data-Engineering-Project/blob/main/notebooks/spark_gcs_bigquery.py) and modified it to make it convert the CSV data to Parquets and then reload the processed parquets data back to both GCS and BigQuery.
-- Uploaded the script to GCS and ran the **Dataproc job** using the command:
-  ```bash
-  gcloud dataproc jobs submit pyspark \
-      --cluster=project-cluster-2c88 \
-      --region=europe-west2 \
-      --jars=gs://spark-lib/bigquery/spark-3.4-bigquery-0.37.0.jar \
-      gs://de-zoomcamp-project-449906_bucket/code/spark_gcs_bigquery.py
-  ```
+🔗 **[View the full Airflow DAG](https://github.com/AbdelaliEch/Football-Data-Project/blob/main/airflow/dags/project_dag.py)**  
 
-### 6. Data Transformation with dbt Cloud
-- Set up a **dbt cloud project** following these guides:
-  - [Manuel Guerra's Notes](https://github.com/ManuelGuerra1987/data-engineering-zoomcamp-notes/tree/main/4_Analytics-Engineering)
-  - [DataTalksClub's dbt setup](https://github.com/DataTalksClub/data-engineering-zoomcamp/blob/main/04-analytics-engineering/dbt_cloud_setup.md)
-- Configured **BigQuery connection** in dbt Cloud.
-- Built [staging, intermediate, and mart models](https://github.com/AbdelaliEch/Football-Data-Engineering-Project/tree/main/dbt-project/models) in dbt to prepare the data for analysis and visualization along with tests and documentation to ensure data quality and pipeline reliability.
-  - The full dbt project is available in the repository under the `/dbt-project` directory
-
- 
-### 7. Visualization with Looker Studio
+### 5. Visualization with Looker Studio
 - Created an interactive **Looker Studio dashboard** to display key insights from the data processed and transformed.
 - The dashboard is divided into **5 pages**, each providing specific insights and enabling data exploration:
   1. **Players Dashboard**:
@@ -120,7 +107,7 @@ The data pipeline follows a structured ELT (Extract, Load, Transform) process:
      - Displays transfer-related data, allowing users to filter by **Season** to see transfers trends.
   5. **Additional Statistics**:
      - Provides aggregated statistics such as **Total Goals** and **Total Assists** by **Country**. 
-- You can access the full Looker studio report [here](https://lookerstudio.google.com/reporting/70c08dd6-9771-41d6-a549-ab60b1409b00).
+- You can access the full Looker studio report [here](https://lookerstudio.google.com/reporting/467df289-21d8-4cfd-8f27-a890f698a903).
 
 ## Reproducibility
 To reproduce this project, follow the Step-by-Step Implementation section above, which provides clear and detailed instructions for easy replication.
