@@ -8,7 +8,7 @@ Quick Links: [Looker Studio Data Visualization](https://lookerstudio.google.com/
 - [Introduction](#introduction)
 - [Problem description and Project objective](#problem-description-and-project-objective)
 - [Dataset](#dataset)
-- [Tools and Technologies Used](#tools-and-technologies-used)
+- [Tech Stack](#tech-stack)
 - [Data Pipeline](#data-pipeline)
 - [Step-by-Step Implementation](#step-by-step-implementation)
 - [Reproducibility](#reproducibility)
