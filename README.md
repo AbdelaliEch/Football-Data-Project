@@ -84,7 +84,8 @@ The data pipeline follows a structured ELT (Extract, Load, Transform) process:
 
 ### 4. Automating the Data Pipeline with Airflow  
 Once the data processing and transformation scripts were developed, **Apache Airflow** was used to automate the end-to-end pipeline
-- Set up **Astronomer Airflow Docker** by following [this tutorial](https://academy.astronomer.io/path/airflow-101/local-development-environment).  
+- Set up **Astronomer Airflow Docker** by following [this tutorial](https://academy.astronomer.io/path/airflow-101/local-development-environment).
+   - 📂 [Airflow setup directory](https://github.com/AbdelaliEch/Football-Data-Project/tree/main/airflow_astro_docker)     
 - Configured necessary connections in Airflow UI (**Kaggle, GCP, and dbt Cloud**).   
 #### 🔹 DAG Workflow  
 1. **Download Dataset from Kaggle** → Fetches football player statistics via the Kaggle API.  
