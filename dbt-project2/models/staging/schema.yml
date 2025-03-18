@@ -4,7 +4,7 @@ version: 2
 sources:
   - name: staging
     database: de-zoomcamp-project-449906
-    schema: de_zoomcamp_project_dataset2
+    schema: de_zoomcamp_project_dataset
     tables:
       - name: appearances
       - name: club_games
