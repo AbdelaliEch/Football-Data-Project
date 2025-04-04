@@ -8,7 +8,7 @@ Quick Links: [Looker Studio Data Visualization](https://lookerstudio.google.com/
 - [Introduction](#introduction)
 - [Problem description and Project objective](#problem-description-and-project-objective)
 - [Dataset](#dataset)
-- [Tools and Technologies Used](#tools-and-technologies-used)
+- [Tech Stack](#tech-stack)
 - [Data Pipeline](#data-pipeline)
 - [Step-by-Step Implementation](#step-by-step-implementation)
 - [Reproducibility](#reproducibility)
@@ -85,7 +85,8 @@ The data pipeline follows a structured ELT (Extract, Load, Transform) process:
 
 ### 4. Automating the Data Pipeline with Airflow  
 Once the data processing and transformation scripts were developed, **Apache Airflow** was used to automate the end-to-end pipeline
-- Set up **Astronomer Airflow Docker** by following [this tutorial](https://youtu.be/ae-CV2KfoN0?si=jq2KO6LgsO2F_D_v).  
+- Set up **Astronomer Airflow Docker** by following [this tutorial](https://academy.astronomer.io/path/airflow-101/local-development-environment).
+   - 📂 [Airflow setup directory](https://github.com/AbdelaliEch/Football-Data-Project/tree/main/airflow_astro_docker)     
 - Configured necessary connections in Airflow UI (**Kaggle, GCP, and dbt Cloud**).   
 #### 🔹 DAG Workflow  
 1. **Download Dataset from Kaggle** → Fetches football player statistics via the Kaggle API.  
