@@ -81,6 +81,7 @@ The data pipeline follows a structured ELT (Extract, Load, Transform) process:
   - 📂 [dbt models](https://github.com/AbdelaliEch/Football-Data-Project/tree/main/dbt_project/models) 
   - 📂 [dbt full project](https://github.com/AbdelaliEch/Football-Data-Project/tree/main/dbt_project) 
   - Included **tests and documentation** to ensure data quality and pipeline reliability.
+  ![dbt lineage](https://github.com/AbdelaliEch/Football-Data-Project/blob/main/images/dbt%20lineage.jpg)
 
 ### 4. Automating the Data Pipeline with Airflow  
 Once the data processing and transformation scripts were developed, **Apache Airflow** was used to automate the end-to-end pipeline
