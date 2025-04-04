@@ -94,7 +94,7 @@ Once the data processing and transformation scripts were developed, **Apache Air
 3. **Process Data with PySpark on Dataproc** → Runs a PySpark job on **Google Dataproc** to clean and preprocess data before loading it into **BigQuery**.  
 4. **Transform Data using dbt** → Runs dbt models to structure and optimize data in **BigQuery**.  
 
-🔗 **[View the full Airflow DAG](https://github.com/AbdelaliEch/Football-Data-Project/blob/main/airflow/dags/project_dag.py)**  
+🔗 **[View the full Airflow DAG](https://github.com/AbdelaliEch/Football-Data-Project/blob/main/airflow_astro_docker/dags/project_dag.py)**  
 
 ### 5. Visualization with Looker Studio
 - Created an interactive **Looker Studio dashboard** to display key insights from the data processed and transformed.
